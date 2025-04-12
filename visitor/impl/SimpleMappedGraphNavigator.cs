@@ -45,6 +45,14 @@ public class SimpleMappedGraphNavigator<T> : IDataMappedGraphNavigator<T> where 
     return nodes.GetValueOrDefault(navigator.ActiveNode);
   }
 
+  public T? GetDataAtNode(IGraphNode? node) {
+    if (node == null) {
+      return default;
+    }
+    
+    return nodes.GetValueOrDefault(node);
+  }
+
   public INodeGraph GetNodeGraph() => graph;
   public IEnumerable<T> GetNodes() => nodes.Values;
 }

@@ -93,11 +93,6 @@ public class SimpleGraphBuilder<T> where T : notnull {
       return null;
     }
 
-    // thinking: if T is a derivative of IInputReceiver, then return a different navigator
-    // if (typeof(IInputReceiver).IsAssignableFrom(typeof(T))) {
-
-    // }
-
     return new SimpleMappedGraphNavigator<T>(graph, mapping);
   }
 }

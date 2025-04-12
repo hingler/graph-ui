@@ -6,8 +6,10 @@ namespace graphui.graph;
 #nullable enable
 
 public interface IDataMappedGraphNavigator<T> where T : notnull {
+  // returns true if state changed - else, false
   public bool Step(Direction dir);
   public T? GetActiveData();
+  public T? GetDataAtNode(IGraphNode? node);
 
   public int Count { get; }
 
